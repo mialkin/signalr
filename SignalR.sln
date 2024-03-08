@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C41A448B-908D-4AD6-B564-3E86F2E92EBC}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Global

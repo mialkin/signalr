@@ -6,9 +6,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSockets", "WebSockets", "{DAC06FAF-9945-4D89-A0A0-CFD486EB3C14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.WebSockets.Api", "src\SignalR.WebSockets.Api\SignalR.WebSockets.Api.csproj", "{E7228319-CBD5-4311-968F-523BE1D6740E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7228319-CBD5-4311-968F-523BE1D6740E} = {DAC06FAF-9945-4D89-A0A0-CFD486EB3C14}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7228319-CBD5-4311-968F-523BE1D6740E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7228319-CBD5-4311-968F-523BE1D6740E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7228319-CBD5-4311-968F-523BE1D6740E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7228319-CBD5-4311-968F-523BE1D6740E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE</title>
+</head>
+<body>
+<script>
+    let source = new EventSource('/sse');
+
+    source.onmessage = (event) => console.log('Message: ' + event.data);
+
+    source.onopen = function (event) {
+        console.log('Connection started');
+    };
+
+    source.onerror = function (event) {
+        console.error(event);
+    };
+
+    source.addEventListener('custom', (e) => console.log('Custom: ' + e.data));
+</script>
+</body>
+</html>

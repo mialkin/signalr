@@ -28,7 +28,7 @@ application.Map("/ws", async httpContext =>
 
     Log.Information("Receiving first message");
     var receiveResult = await webSocket.ReceiveAsync(buffer: new ArraySegment<byte>(buffer), CancellationToken.None);
-    Log.Information("Received first message");
+    Log.Information("Received first message: {message}", Encoding.UTF8.GetString(buffer[..receiveResult.Count]));
     var i = 1;
 
     while (!receiveResult.CloseStatus.HasValue)

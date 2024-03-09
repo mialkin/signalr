@@ -11,7 +11,7 @@
     const socket = new WebSocket('ws://localhost:5230/ws');
     let i = 100;
     socket.addEventListener('open', function (event) {
-        socket.send('Connection is open');
+        // socket.send('Connection is open');
 
         setInterval(function () {
             socket.send('data ' + i++);

@@ -8,8 +8,8 @@
 </head>
 <body>
 <script>
-    const socket = new WebSocket('ws://localhost:5000/ws');
-    let i = 0;
+    const socket = new WebSocket('ws://localhost:5230/ws');
+    let i = 100;
     socket.addEventListener('open', function (event) {
         socket.send('Connection is open');
 
@@ -19,7 +19,7 @@
     });
 
     socket.addEventListener('message', function (event) {
-        console.log('Data received', event.data);
+        console.log('Data received:', event.data);
     });
 </script>
 </body>

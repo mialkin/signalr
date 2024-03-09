@@ -13,6 +13,8 @@ List<WebSocket> webSockets = [];
 
 application.Map("/ws", async httpContext =>
 {
+    Console.WriteLine("/ws endpoint was called");
+
     var buffer = new byte[1024 * 4];
     var webSocket = await httpContext.WebSockets.AcceptWebSocketAsync();
     webSockets.Add(webSocket);
@@ -34,7 +36,7 @@ application.Map("/ws", async httpContext =>
 
         receiveResult = await webSocket.ReceiveAsync(buffer: new ArraySegment<byte>(buffer), CancellationToken.None);
 
-        Console.WriteLine($"Received: {Encoding.UTF8.GetString(buffer[..receiveResult.Count])}");
+        Console.WriteLine($"Data received: {Encoding.UTF8.GetString(buffer[..receiveResult.Count])}");
     }
 
     await webSocket.CloseAsync(
@@ -43,6 +45,8 @@ application.Map("/ws", async httpContext =>
         CancellationToken.None);
 
     webSockets.Remove(webSocket);
+
+    Console.WriteLine("WebSocket has been closed");
 });
 
 application.MapGet("/", () => "Hello World!");

@@ -9,22 +9,26 @@ application.UseStaticFiles();
 application.UseRouting();
 application.UseWebSockets(new WebSocketOptions { KeepAliveInterval = TimeSpan.FromSeconds(30) });
 
+var logger = LoggerFactory.Create(config => { config.AddConsole(); }).CreateLogger("Program");
+
 List<WebSocket> webSockets = [];
 
 application.Map("/ws", async httpContext =>
 {
-    Console.WriteLine("/ws endpoint was called");
+    logger.LogInformation("/ws endpoint called");
 
     var buffer = new byte[1024 * 4];
     var webSocket = await httpContext.WebSockets.AcceptWebSocketAsync();
     webSockets.Add(webSocket);
 
+    logger.LogInformation("Receiving first message");
     var receiveResult = await webSocket.ReceiveAsync(buffer: new ArraySegment<byte>(buffer), CancellationToken.None);
-    var i = 0;
+    logger.LogInformation("Received first message");
+    var i = 1;
 
     while (!receiveResult.CloseStatus.HasValue)
     {
-        var message = Encoding.UTF8.GetBytes($"message index {i++}");
+        var message = Encoding.UTF8.GetBytes($"Message index {i++}");
         foreach (var socket in webSockets)
         {
             await socket.SendAsync(
@@ -34,9 +38,10 @@ application.Map("/ws", async httpContext =>
                 CancellationToken.None);
         }
 
+        logger.LogInformation("Receiving {i}-th message", i);
         receiveResult = await webSocket.ReceiveAsync(buffer: new ArraySegment<byte>(buffer), CancellationToken.None);
-
-        Console.WriteLine($"Data received: {Encoding.UTF8.GetString(buffer[..receiveResult.Count])}");
+        logger.LogInformation("Received {i}-th message {message}", i,
+            Encoding.UTF8.GetString(buffer[..receiveResult.Count]));
     }
 
     await webSocket.CloseAsync(
@@ -46,7 +51,7 @@ application.Map("/ws", async httpContext =>
 
     webSockets.Remove(webSocket);
 
-    Console.WriteLine("WebSocket has been closed");
+    logger.LogInformation("WebSocket closed");
 });
 
 application.MapGet("/", () => "Hello World!");

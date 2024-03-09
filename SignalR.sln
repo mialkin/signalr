@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSockets", "WebSockets", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.WebSockets.Api", "src\SignalR.WebSockets.Api\SignalR.WebSockets.Api.csproj", "{E7228319-CBD5-4311-968F-523BE1D6740E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Sockets.Console", "src\SignalR.Sockets.Console\SignalR.Sockets.Console.csproj", "{974C40EE-184A-4323-A7CE-AB476FC83F84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E7228319-CBD5-4311-968F-523BE1D6740E} = {DAC06FAF-9945-4D89-A0A0-CFD486EB3C14}
+		{974C40EE-184A-4323-A7CE-AB476FC83F84} = {DAC06FAF-9945-4D89-A0A0-CFD486EB3C14}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E7228319-CBD5-4311-968F-523BE1D6740E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7228319-CBD5-4311-968F-523BE1D6740E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7228319-CBD5-4311-968F-523BE1D6740E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7228319-CBD5-4311-968F-523BE1D6740E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

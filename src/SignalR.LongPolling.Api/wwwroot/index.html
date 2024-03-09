@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long polling</title>
+</head>
+<body>
+<script>
+    const listen = (myCallback) => fetch('/listen')
+        .then(r => r.text())
+        .then(t => {
+            myCallback(t);
+            listen(myCallback);
+        });
+
+    listen((r) => console.log(r));
+
+    const send = (m) => fetch('/send?m=' + encodeURIComponent(m)); // This is just helper to use in developer's console
+</script>
+</body>
+</html>

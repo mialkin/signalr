@@ -12,6 +12,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.WebSockets.Api", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Sockets.Console", "src\SignalR.Sockets.Console\SignalR.Sockets.Console.csproj", "{974C40EE-184A-4323-A7CE-AB476FC83F84}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SseAndPolling", "SseAndPolling", "{08A9DC00-FD8D-4AB9-95D8-FAF2CE038E2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.ServerSentEvents.Api", "src\SignalR.ServerSentEvents.Api\SignalR.ServerSentEvents.Api.csproj", "{B3053511-556F-4987-A4C8-45C95C9543E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.LongPolling.Api", "src\SignalR.LongPolling.Api\SignalR.LongPolling.Api.csproj", "{6456F738-39D3-4DC3-A267-03163BC38E62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +26,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E7228319-CBD5-4311-968F-523BE1D6740E} = {DAC06FAF-9945-4D89-A0A0-CFD486EB3C14}
 		{974C40EE-184A-4323-A7CE-AB476FC83F84} = {DAC06FAF-9945-4D89-A0A0-CFD486EB3C14}
+		{B3053511-556F-4987-A4C8-45C95C9543E5} = {08A9DC00-FD8D-4AB9-95D8-FAF2CE038E2E}
+		{6456F738-39D3-4DC3-A267-03163BC38E62} = {08A9DC00-FD8D-4AB9-95D8-FAF2CE038E2E}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E7228319-CBD5-4311-968F-523BE1D6740E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +38,13 @@ Global
 		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974C40EE-184A-4323-A7CE-AB476FC83F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3053511-556F-4987-A4C8-45C95C9543E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3053511-556F-4987-A4C8-45C95C9543E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3053511-556F-4987-A4C8-45C95C9543E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3053511-556F-4987-A4C8-45C95C9543E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6456F738-39D3-4DC3-A267-03163BC38E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6456F738-39D3-4DC3-A267-03163BC38E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6456F738-39D3-4DC3-A267-03163BC38E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6456F738-39D3-4DC3-A267-03163BC38E62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
